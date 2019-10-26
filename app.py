@@ -12,6 +12,8 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser87@myfirstcluster-kkere.mo
 mongo = PyMongo(app)
 
 
+#--------------------------Tasks---------------------------------
+
 @app.route('/')
 @app.route('/get_tasks')
 def get_tasks():
@@ -57,6 +59,8 @@ def delete_task(task_id):
     mongo.db.tasks.remove({'_id': ObjectId(task_id)})
     return redirect(url_for('get_tasks'))
 
+
+#--------------------------Categories----------------------------
     
 @app.route('/get_categories')
 def get_categories():
